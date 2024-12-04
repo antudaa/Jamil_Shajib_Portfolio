@@ -1,0 +1,88 @@
+.sectionbackground {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .parallax {
+    background-image: url("https://images.unsplash.com/photo-1558985040-ed4d5029dd50?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NjIzODkxNjg&ixlib=rb-1.2.1&q=80"); 
+  }
+  
+  
+  .landing{
+      position: relative;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+  
+      img{
+        object-fit: cover;
+      }
+      
+      .sliderContainer{
+        position: absolute;
+        top: calc(100vh - 370px);
+      }
+      
+      .slider{
+        position: relative;
+        white-space: nowrap;
+      }
+      
+      .slider p{
+        position: relative;
+        margin: 0px;
+        color: rgb(48, 48, 48);
+        font-size: 230px;
+        font-weight: 500;
+        padding-right: 50px;
+      }
+      
+      .slider p:nth-of-type(2){
+        position: absolute;
+        left: 100%;
+        top: 0;
+      }
+    
+      .description{
+        position: absolute;
+        top: 35%;
+        left: 65%;
+        color: rgb(48, 48, 48);
+        font-size: 24px;
+        font-weight: 300;
+        p{
+          margin: 0px;
+          margin-bottom: 10px;
+        }
+        svg{
+          transform: scale(2);
+          margin-bottom: 100px;
+        }
+      }
+    }
+    .sectionBackground {
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      height: 100vh;
+      width: 100%;
+      background-color:  #EDF9FF;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .velocityText {
+      font-size: 125px;
+      color: #ffffff;
+      text-align: center;
+    }
+  
