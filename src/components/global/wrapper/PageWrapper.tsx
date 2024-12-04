@@ -8,16 +8,14 @@ const PageWrapper = ({ loadingTime }: { loadingTime: number }) => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        (
-            async () => {
-                setTimeout(() => {
-                    setIsLoading(false);
-                    document.body.style.cursor = 'default'
-                    window.scrollTo(0, 0);
-                }, loadingTime)
-            }
-        )()
-    }, [loadingTime])
+        if (typeof window !== "undefined") {
+            setTimeout(() => {
+                setIsLoading(false);
+                document.body.style.cursor = 'default';
+                window.scrollTo(0, 0);
+            }, loadingTime);
+        }
+    }, [loadingTime]);
 
     return (
         <AnimatePresence mode='wait'>

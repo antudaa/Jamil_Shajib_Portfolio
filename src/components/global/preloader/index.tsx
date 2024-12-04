@@ -15,16 +15,18 @@ export default function Index() {
     const pathname = fullPathname.split('/')[1];
 
     useEffect(() => {
-        // Check localStorage for the flag
-        const hasVisited = localStorage.getItem('hasVisited');
-        if (hasVisited) {
-            setShowAnimation(false);
-        } else {
-            localStorage.setItem('hasVisited', 'true');
+        if (typeof window !== "undefined") {
+            // Check localStorage for the flag
+            const hasVisited = localStorage.getItem('hasVisited');
+            if (hasVisited) {
+                setShowAnimation(false);
+            } else {
+                localStorage.setItem('hasVisited', 'true');
+            }
+    
+            // Set viewport dimensions
+            setDimension({ width: window.innerWidth, height: window.innerHeight });
         }
-
-        // Set viewport dimensions
-        setDimension({ width: window.innerWidth, height: window.innerHeight });
     }, []);
 
     useEffect(() => {

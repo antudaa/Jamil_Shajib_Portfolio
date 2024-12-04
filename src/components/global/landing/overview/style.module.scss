@@ -1,0 +1,159 @@
+.cardContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5%;
+    padding: 15px;
+    height: 850px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .cardContainer::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .cardText {
+    position: absolute;
+    bottom: 10%;
+    left: 40%;
+    transform: translate(-50%, 0); /* Center the text */
+    color: #fff;
+    text-align: center;
+    z-index: 2;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Prevent interaction with hidden elements */
+    transition: opacity 0.3s ease-in-out 0.3s, visibility 0s linear 0.3s;
+  }
+  
+  .snip1392 {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s ease; /* Card grows first */
+    flex-shrink: 0;
+    width: 20%;
+    height: 700px;
+    scroll-snap-align: start;
+  }
+  
+  .snip1392 img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.35s ease; /* Image enlarges first */
+  }
+  
+  .snip1392.active .cardText,
+  .snip1392:hover .cardText {
+    opacity: 1; /* Show text after delay */
+    visibility: visible;
+    transition: opacity 0.3s ease-in-out 0.3s, visibility 0s linear 0.3s; /* Matches the delay */
+  }
+  
+  .snip1392.inactive .cardText {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0s linear; /* Hides text immediately */
+  }
+  
+  .snip1392:hover img {
+    transform: scale(1.1); /* Enlarge the image */
+    transition: transform 0.35s ease; /* Smooth scaling */
+  }
+  
+  /* Hover effect for large screens */
+  .snip1392.active {
+    width: 35%;
+    height: 800px;
+  }
+  
+  .snip1392.inactive {
+    width: 20%;
+    height: 600px;
+  }
+  
+  /* For screens smaller than 750px (show 1 card) */
+  @media (max-width: 750px) {
+    .cardContainer {
+      gap: 5%;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  
+    .snip1392 {
+      width: 100%;
+      height: 600px;
+    }
+  
+    .snip1392.active,
+    .snip1392.inactive {
+      width: 100%;
+      height: 600px;
+    }
+  }
+  
+  /* For screens between 750px and 1000px (show 2 cards) */
+  @media (max-width: 1000px) and (min-width: 751px) {
+    .cardContainer {
+      gap: 5%;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  
+    .snip1392 {
+      width: 50%;
+      height: 700px;
+    }
+  
+    .snip1392.active,
+    .snip1392.inactive {
+      width: 50%;
+      height: 700px;
+    }
+  }
+  
+  /* For screens between 1000px and 1220px (show 3 cards) */
+  @media (max-width: 1220px) and (min-width: 1001px) {
+    .cardContainer {
+      gap: 3%;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  
+    .snip1392 {
+      width: 33%;
+      height: 700px;
+    }
+  
+    .snip1392.active,
+    .snip1392.inactive {
+      width: 33%;
+      height: 700px;
+    }
+  }
+  
+  /* For screens larger than 1220px (enable hover animations) */
+  @media (min-width: 1221px) {
+    .cardContainer {
+      gap: 0.5%;
+    }
+  
+    .snip1392 {
+      width: 18%;
+      height: 700px;
+    }
+  
+    .snip1392.active {
+      width: 25%;
+      height: 800px;
+    }
+  
+    .snip1392.inactive {
+      width: 18%;
+      height: 600px;
+    }
+  }
+  
